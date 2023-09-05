@@ -8,10 +8,30 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="loginFrom">
-  <h1>Welcome Your Bank</h1>
-
-  inpu
+<div id="loginFrom" class="loginFrom pt-40">
+  <H1 class="text-center"> Welcome Your bank</H1>
+  <div class="loginArea  ">
+    <input type="email" name="" id="" class="p-4" placeholder="email">
+    <br>
+    <input type="password" name="" id="" class="p-4" placeholder="password">
+    <br>
+    <button type="button" id="btn" class="text-gray-900 bg-gradient-to-r from-lime-200 via-lime-400 to-lime-500 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-lime-300 dark:focus:ring-lime-800 shadow-lg shadow-lime-500/50 dark:shadow-lg dark:shadow-lime-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Lime</button>
+  </div>
 </div>
+
+<div id="transtion-area">
+  <h1>Transtion Area</h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus optio incidunt nobis. Eum, totam nam hic ducimus laborum dicta odit! Deleniti, hic repudiandae id culpa dolor atque sapiente tempore sed temporibus numquam. Quas, blanditiis. Hic veniam accusamus illo nemo aliquid necessitatibus dolores excepturi amet nobis aperiam? Maxime minus tenetur nemo!</p>
+</div>
+
+<script>
+  var logInBtn = document.getElementById("btn");
+  logInBtn.addEventListener("click", function(){
+    var logInFrom = document.getElementById("loginFrom");
+    logInFrom.style.display = "none";
+    var transtionArea = document.getElementById("transtion-area");
+    transtionArea.style.display = "block"
+  })
+</script>
 </body>
 </html>

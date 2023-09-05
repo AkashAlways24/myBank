@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0f0f1a;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.loginArea{
+  background-color: #444343;
+  color: rgb(0, 0, 0);
+  padding: 10px 30px;
+  margin: 0px 40px;
+  border-radius: 15px;
+
+}
+
+input{
+  background-color: #444343;
+  border: none;
+}
+
+
+#transtion-area{
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
