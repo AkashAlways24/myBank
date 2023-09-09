@@ -19,9 +19,33 @@
   </div>
 </div>
 
-<div id="transtion-area">
-  <h1>Transtion Area</h1>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus optio incidunt nobis. Eum, totam nam hic ducimus laborum dicta odit! Deleniti, hic repudiandae id culpa dolor atque sapiente tempore sed temporibus numquam. Quas, blanditiis. Hic veniam accusamus illo nemo aliquid necessitatibus dolores excepturi amet nobis aperiam? Maxime minus tenetur nemo!</p>
+<div id="transaction-area" class="hidden">
+  <div class="row1 ml-4 mt-32 grid gap-x-4 grid-flow-col auto-cols-[minmax(0,_2fr)] ">
+    <div id="deposit" class="bg-orange-600 p-8 rounded-2xl text-center">
+    <h2>Deposit</h2>
+    <h3>$00</h3>
+    </div>
+    <div id="Withdraw" class="bg-lime-600 p-8 rounded-2xl text-center">
+    <h2>Withdraw</h2>
+    <h3>$00</h3>
+    </div>
+    <div id="balance" class="bg-rose-600 p-8 rounded-2xl text-center">
+    <h2>Balance</h2>
+    <h3>$ 1240</h3>
+    </div>
+  </div>
+    <div id="submit-area" class="row2  ml-4 mt-32 grid gap-x-4 grid-flow-col auto-cols-[minmax(0,_2fr)]">
+      <div class="colom bg-green-300 p-4">
+        <h4>Deposit</h4>
+        <input type="text">
+        <button class="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Deposit</button>
+      </div>
+    <div class="colom bg-red-300 p-4">
+        <h4>Withdraw</h4>
+        <input type="text">
+        <button class="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Withdraw</button>
+    </div>
+  </div>
 </div>
 
 <script>
@@ -29,8 +53,8 @@
   logInBtn.addEventListener("click", function(){
     var logInFrom = document.getElementById("loginFrom");
     logInFrom.style.display = "none";
-    var transtionArea = document.getElementById("transtion-area");
-    transtionArea.style.display = "block"
+    var transactionArea = document.getElementById("transaction-area");
+    transactionArea.style.display = "block"
   })
 </script>
 </body>
