@@ -37,12 +37,12 @@
     <div id="submit-area" class="row2  ml-4 mt-32 grid gap-x-4 grid-flow-col auto-cols-[minmax(0,_2fr)]">
       <div class="colom bg-green-300 p-4">
         <h4>Deposit</h4>
-        <input type="text">
-        <button class="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Deposit</button>
+        <input id="depositAmount" type="text" placeholder="$ Deposit Amount">
+        <button id="addDeposit" class="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Deposit</button>
       </div>
     <div class="colom bg-red-300 p-4">
         <h4>Withdraw</h4>
-        <input type="text">
+        <input type="text" placeholder="$ Withdraw Amount">
         <button class="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Withdraw</button>
     </div>
   </div>
@@ -55,6 +55,15 @@
     logInFrom.style.display = "none";
     var transactionArea = document.getElementById("transaction-area");
     transactionArea.style.display = "block"
+  })
+
+  
+  
+  var depositBTN = document.getElementById("addDeposit");
+  depositBTN.addEventListener("click", function(){
+    var depositAmount = document.getElementById("depositAmount").value;
+    var depositNumber = parseFloat(depositAmount);
+    console.log(depositNumber);
   })
 </script>
 </body>
