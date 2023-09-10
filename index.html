@@ -23,7 +23,7 @@
   <div class="row1 ml-4 mt-32 grid gap-x-4 grid-flow-col auto-cols-[minmax(0,_2fr)] ">
     <div id="deposit" class="bg-orange-600 p-8 rounded-2xl text-center">
     <h2>Deposit</h2>
-    <h3>$00</h3>
+    <h3>$ <span id="currentDeposit">00</span></h3>
     </div>
     <div id="Withdraw" class="bg-lime-600 p-8 rounded-2xl text-center">
     <h2>Withdraw</h2>
@@ -49,21 +49,34 @@
 </div>
 
 <script>
+
+  // login btn agera
   var logInBtn = document.getElementById("btn");
   logInBtn.addEventListener("click", function(){
     var logInFrom = document.getElementById("loginFrom");
     logInFrom.style.display = "none";
     var transactionArea = document.getElementById("transaction-area");
     transactionArea.style.display = "block"
-  })
+  });
 
   
-  
+  // add deposit btn 
   var depositBTN = document.getElementById("addDeposit");
   depositBTN.addEventListener("click", function(){
     var depositAmount = document.getElementById("depositAmount").value;
     var depositNumber = parseFloat(depositAmount);
-    console.log(depositNumber);
+
+    // ai khane deposit area input ta kaj kora holo 
+    var currentDeposit = document.getElementById("currentDeposit").innerText;
+    var currentDepositNumber = parseFloat(currentDeposit);
+    
+    // ai khan e disposit input o opore number + kora holo 
+    var totalDeposit = depositNumber + currentDepositNumber;
+    
+    // aikhane + kore opore display te show kora holo 
+    document.getElementById("currentDeposit").innerText = totalDeposit;
+    // ai khane input thake value aber blank kore rakhe 
+    document.getElementById("depositAmount").value = "";
   })
 </script>
 </body>
