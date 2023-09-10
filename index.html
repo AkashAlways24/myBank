@@ -31,7 +31,7 @@
     </div>
     <div id="balance" class="bg-rose-600 p-8 rounded-2xl text-center">
     <h2>Balance</h2>
-    <h3>$ 1240</h3>
+    <h3>$ <span id="currentBalance">1240</span></h3>
     </div>
   </div>
     <div id="submit-area" class="row2  ml-4 mt-32 grid gap-x-4 grid-flow-col auto-cols-[minmax(0,_2fr)]">
@@ -75,6 +75,17 @@
     
     // aikhane + kore opore display te show kora holo 
     document.getElementById("currentDeposit").innerText = totalDeposit;
+
+
+    // ai khane balance er ager man ta sho dora holo 
+    var currentBalance = document.getElementById("currentBalance").innerText;
+    var currentBalanceNumber = parseFloat(currentBalance);
+    // ai khane ager man shor & ekhun je ta deposit er maje input hoche oi ta + kora holo 
+    var totalBalance = depositNumber + currentBalanceNumber;
+    // ai khane total kore balance er maje text k update kora holo 
+    document.getElementById("currentBalance").innerText = totalBalance ;
+
+
     // ai khane input thake value aber blank kore rakhe 
     document.getElementById("depositAmount").value = "";
   })
