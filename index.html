@@ -27,7 +27,7 @@
     </div>
     <div id="Withdraw" class="bg-lime-600 p-8 rounded-2xl text-center">
     <h2>Withdraw</h2>
-    <h3>$00</h3>
+    <h3>$ <span id="currentWithdraw">00</span></h3>
     </div>
     <div id="balance" class="bg-rose-600 p-8 rounded-2xl text-center">
     <h2>Balance</h2>
@@ -42,8 +42,8 @@
       </div>
     <div class="colom bg-red-300 p-4">
         <h4>Withdraw</h4>
-        <input type="text" placeholder="$ Withdraw Amount">
-        <button class="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Withdraw</button>
+        <input id="withdrawAmount" type="text" placeholder="$ Withdraw Amount">
+        <button id="addWithdraw" class="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">Withdraw</button>
     </div>
   </div>
 </div>
@@ -59,36 +59,72 @@
     transactionArea.style.display = "block"
   });
 
+
+
   
-  // add deposit btn 
+  // add deposit btn *************************************
+
   var depositBTN = document.getElementById("addDeposit");
   depositBTN.addEventListener("click", function(){
-    var depositAmount = document.getElementById("depositAmount").value;
-    var depositNumber = parseFloat(depositAmount);
-
-    // ai khane deposit area input ta kaj kora holo 
-    var currentDeposit = document.getElementById("currentDeposit").innerText;
-    var currentDepositNumber = parseFloat(currentDeposit);
+    var depositNumber = getInput("depositAmount");
+    // var depositAmount = document.getElementById("depositAmount").value;
+    // var depositNumber = parseFloat(depositAmount);
     
-    // ai khan e disposit input o opore number + kora holo 
-    var totalDeposit = depositNumber + currentDepositNumber;
     
-    // aikhane + kore opore display te show kora holo 
-    document.getElementById("currentDeposit").innerText = totalDeposit;
+    // // ai khane deposit area input ta kaj kora holo 
+    // var currentDeposit = document.getElementById("currentDeposit").innerText;
+    // var currentDepositNumber = parseFloat(currentDeposit);
+    // var totalDeposit = depositNumber + currentDepositNumber;    // ai khan e disposit input o opore number + kora holo 
+    // document.getElementById("currentDeposit").innerText = totalDeposit;    // aikhane + kore opore display te show kora holo 
+    updateSpan("currentDeposit", depositNumber);
 
 
-    // ai khane balance er ager man ta sho dora holo 
-    var currentBalance = document.getElementById("currentBalance").innerText;
-    var currentBalanceNumber = parseFloat(currentBalance);
-    // ai khane ager man shor & ekhun je ta deposit er maje input hoche oi ta + kora holo 
-    var totalBalance = depositNumber + currentBalanceNumber;
-    // ai khane total kore balance er maje text k update kora holo 
-    document.getElementById("currentBalance").innerText = totalBalance ;
 
-
+    // var currentBalance = document.getElementById("currentBalance").innerText;    // ai khane balance er ager man ta sho dora holo 
+    // var currentBalanceNumber = parseFloat(currentBalance);
+    // var totalBalance = depositNumber + currentBalanceNumber;    // ai khane ager man shor & ekhun je ta deposit er maje input hoche oi ta + kora holo 
+    // document.getElementById("currentBalance").innerText = totalBalance ;     // ai khane total kore balance er maje text k update kora holo 
+    updateSpan("currentBalance", depositNumber);
+    
     // ai khane input thake value aber blank kore rakhe 
     document.getElementById("depositAmount").value = "";
   })
+
+
+
+      // add withdrow btn ***********************************
+
+
+
+      var withdrawBTN = document.getElementById("addWithdraw");
+    withdrawBTN.addEventListener("click", function(){
+      var withdrawNumber = getInput("withdrawAmount");
+      updateSpan("currentWithdraw", withdrawNumber )
+      updateSpan("currentBalance", -1 * withdrawNumber)
+    // var withdrawAmount = document.getElementById("withdrawAmount").value;
+    // var withdrawNumber = parseFloat(withdrawAmount);
+  
+
+
+    document.getElementById("withdrawAmount").value = "";
+  })
+  // function**********************************
+  function getInput(id) {
+    var inputAmount = document.getElementById(id).value;
+    var inputNumber = parseFloat(inputAmount);
+    return inputNumber;
+  }
+
+
+  function updateSpan(id, Number) {
+    var currentNumber = document.getElementById(id).innerText;
+    var currentAddNumber = parseFloat(currentNumber);
+    var total = Number + currentAddNumber; 
+    document.getElementById(id).innerText = total;
+  };
+
+
+  
 </script>
 </body>
 </html>
